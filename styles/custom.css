@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Dirty Fox";
+  src: url('/fonts/dirty_fox.woff2');
+}
+
+.img-box {
+  width: 328px;
+  height: 172px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-size {
+  max-width: 170px;
+}
+
+.logo-text {
+  margin-top: -40px;
+}
+
+.cana {
+  transform: rotate(-10deg);
+}
+
+.data {
+  transform: rotate(9deg);
+}
+
+.search-btn {
+  background-color: #d63c18;
+}
+
+.orange {
+  color: #d63c18;
+}
+
+.lmia-chart-filter {
+  width: 500px;
+  margin-left: 70px;
+}
+
+.lmia-chart-title {
+  margin-bottom: 24px;
+  width: 500px;
+  margin-left: 42px;
+}
+
+.cube {
+  min-width: 15px;
+  height: 15px;
+}
+.margin-84 {
+  margin-top: 84px;
+}
+.font-dirty {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.patreon-btn {
+  height: 23px;
+  cursor: pointer;
+}
+
+.canadata-main-sign {
+  font-family: "Dirty Fox";
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.custom-blue {
+  background-color: #e8fefc;
+}
+
+.custom-violet {
+  background-color: #e8eafe;
+}
+
+.question-img {
+  width: 40px;
+  background-color: #e8eafe;
+}
+
+.canada-background {
+  height: 400px;
+  color: #fff;
+  background: url(/canada-buildings.jpg);
+  background-size: 100%;  
+}

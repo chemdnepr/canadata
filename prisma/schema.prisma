@@ -1,0 +1,54 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Link {
+  id          String   @unique
+  index       Int      @id @default(autoincrement())
+  title       String
+  description String
+  url         String
+  imageUrl    String
+  category    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  users       User[]
+}
+
+model Lmia {
+  id          String   @unique
+  index       Int      @id @default(autoincrement())
+  province    String
+  stream      String
+  employer    String
+  address     String
+  occupation  String
+  noc         String
+  incorporate_status  String
+  approved_lmias      Int
+  approved_positions  Int
+  year                Int
+  quarter             String
+  logo        String?
+  url         String?
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String?  @unique
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  favorites Link[]
+  role      Role     @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIN
+}
