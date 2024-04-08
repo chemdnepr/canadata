@@ -82,8 +82,8 @@ const Home: NextPage = () => {
           <>
             <p className="indent-10 text-lg pl-20 pr-20 pt-1">
               LMIA - labour market impact assessment - is a document that companies should obtain to hire foreign workers.
-              An LMIA is a form of labour market verification designed to protect Canada's domestic employees. In simple words,
-              Canada's government want to check that employees in Canada will be hired first, and only if there is no proper candidates for
+              An LMIA is a form of labour market verification designed to protect Canadas domestic employees. In simple words,
+              Canadas government want to check that employees in Canada will be hired first, and only if there is no proper candidates for
               a specific job, forein workers are considered.
               Not every employer can do that. There are requirments for companies who can get LMIA to support permanent residence.
               For example the company should be in business for at least 1 year etc.
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
             </div>
             <p className="indent-10 text-lg pl-20 pr-20 pt-1 pb-10">
               In some cases, foreiners can get Open Work Permit, that allows to work on any employer in Canada without restrictions.
-              It sounds more attractive than Closed Work Permit, but in this case you won't get extra 50(200) points in your Express Entry profile.
+              It sounds more attractive than Closed Work Permit, but in this case you wont get extra 50(200) points in your Express Entry profile.
               Also LMIA is a must for some Provincial Nominee Programs.
             </p>
           </>

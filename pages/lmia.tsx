@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { getSession } from '@auth0/nextjs-auth0'
+import { getSession } from '@auth0/nextjs-auth0';
+import prisma from '../lib/prisma'
 
 import { useUser } from '@auth0/nextjs-auth0';
 
@@ -46,7 +47,7 @@ const Lmia: NextPage = () => {
   const [year, setYear] = useState('');
   const [isChanged, setIsChanged] = useState(false);
   
-  const roles = (user ? user['https://canadata.io/roles'] : '') as String[];
+  const roles = (user ? user['/roles'] : '') as String[];
   const role = roles?.length ? roles[0] : '';
   const getVariables = () => (
     {
@@ -184,7 +185,7 @@ const Lmia: NextPage = () => {
                 <p className="text-sm">{node.occupation}</p>
                 {node.url &&
                   <div className="text-sm text-blue-500">
-                    <a target="_blank" href={node.url} className="flex hover:text-blue-500">
+                    <a target="_blank" href={node.url} rel="noreferrer" className="flex hover:text-blue-500">
                       {node.url}
                       <svg
                         className="w-4 h-4 my-1"
