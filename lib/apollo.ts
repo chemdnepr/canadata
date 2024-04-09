@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, DefaultOptions } from "@apollo/client";
+import { ApolloClient, InMemoryCache, DefaultOptions, createHttpLink } from "@apollo/client";
 
 const defaultOptions: DefaultOptions = {
   watchQuery: {
@@ -11,9 +11,13 @@ const defaultOptions: DefaultOptions = {
   },
 }
 
-const apolloClient = new ApolloClient({
+const link = createHttpLink({
   uri: `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}/api/graphql`,
+  credentials: 'same-origin'
+});
+const apolloClient = new ApolloClient({  
   cache: new InMemoryCache(),
+  link,
   defaultOptions: defaultOptions,
 });
 
