@@ -2,28 +2,20 @@ import { ApolloServer } from 'apollo-server-micro';
 import { schema } from '../../graphql/schema';
 import { resolvers } from '../../graphql/resolvers';
 import { createContext } from '../../graphql/context';
-import Cors from 'micro-cors';
+import micro_cors from 'micro-cors';
 
-const cors = Cors();
+const cors = micro_cors({
+  origin: "https://canadark.com",
+  allowCredentials: true,
+  allowMethods:["GET", "POST","PUT","DELETE"],
+  allowHeaders:["access-control-allow-credentials","access-control-allow-origin","content-type"]          
+  });
 const apolloServer = new ApolloServer({ schema, resolvers, context: createContext });
 
 const startServer = apolloServer.start();
 
 
-export default cors(async function handler(req, res) {
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader(
-        "Access-Control-Allow-Origin",
-        "https://canadark.com"
-    );
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods, Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Access-Control-Allow-Headers"
-    );
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD"
-    );
+const handlers = cors(async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.end();
     return false;
@@ -39,3 +31,5 @@ export const config = {
     bodyParser: false
   }
 };
+
+export default handlers;
