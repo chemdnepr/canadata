@@ -12,7 +12,7 @@ const defaultOptions: DefaultOptions = {
 }
 
 const link = createHttpLink({
-  uri: `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}/api/graphql`,
+  uri: `${process.env.PROTOCOL}://www.${process.env.HOST}:${process.env.PORT}/api/graphql`,
   fetchOptions: {
     mode: 'same-origin'
   }
