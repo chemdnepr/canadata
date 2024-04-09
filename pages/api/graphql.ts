@@ -15,7 +15,7 @@ const apolloServer = new ApolloServer({ schema, resolvers, context: createContex
 const startServer = apolloServer.start();
 
 
-const handlers = cors(async function handler(req, res) {
+export default cors(async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.end();
     return false;
@@ -31,5 +31,3 @@ export const config = {
     bodyParser: false
   }
 };
-
-export default handlers;
