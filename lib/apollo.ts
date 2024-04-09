@@ -13,7 +13,9 @@ const defaultOptions: DefaultOptions = {
 
 const link = createHttpLink({
   uri: `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}/api/graphql`,
-  credentials: 'same-origin'
+  fetchOptions: {
+    mode: 'no-cors'
+  }
 });
 const apolloClient = new ApolloClient({  
   cache: new InMemoryCache(),
