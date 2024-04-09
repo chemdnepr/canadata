@@ -14,7 +14,7 @@ const nextConfig = {
     PROTOCOL: "http",
     HOST: "localhost",
     PORT: "3000",
-    DATABASE_URL: "mysql://chemdnepr:@bagirA2022@localhost:3306/canadata?schema=public",
+    DATABASE_URL: "postgres://default:hEWuiwg9N7Zb@ep-holy-art-a4e52k36.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
     AUTH0_SECRET: "9541183104bdb916cb20518d0d7d6a1da31267159877688c548f6dc530092767",
     AUTH0_BASE_URL: "https://pretest.me",
     AUTH0_ISSUER_BASE_URL: "https://canadata.us.auth0.com",
