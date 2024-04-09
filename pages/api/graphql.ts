@@ -5,7 +5,7 @@ import { createContext } from '../../graphql/context';
 import micro_cors from 'micro-cors';
 
 const cors = micro_cors({
-  origin: "https://canadark.com",
+  origin: "https://www.canadark.com",
   allowCredentials: true,
   allowMethods:["GET", "POST","PUT","DELETE"],
   allowHeaders:["access-control-allow-credentials","access-control-allow-origin","content-type"]          
